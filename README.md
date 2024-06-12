@@ -1,16 +1,45 @@
 # string_generator
 
-A new Flutter project.
+A Random String Generator application.
 
-## Getting Started
+### Objective
 
-This project is a starting point for a Flutter application.
+Create an application that will send a request to the given endpoint and display the fetched data which is a random string.
 
-A few resources to get you started if this is your first Flutter project:
+### Response Format
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
+{
+    'randomString': '<STRING>';
+}
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Screenshot
+
+### Getting Started
+
+Steps to running the app locally:
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/tonsz/string_generator.git
+```
+
+2. Navigate to the project directory
+
+```bash
+cd string_generator
+```
+
+3. Install dependencies
+
+```bash
+flutter pub get
+```
+
+4. Run the app
+
+```bash
+flutter run
+```
