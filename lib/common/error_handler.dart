@@ -2,8 +2,12 @@ import 'dart:async';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 
+/// A class for error handling in various situations
 class ErrorHandler {
-  getErrorMessage(error) {
+  /// Returns a string that represents the error message
+  ///
+  /// This method takes an [error] parameter as the caught exception.
+  String getErrorMessage(error) {
     if (error is SocketException) {
       return 'No internet connection';
     } else if (error is HttpException) {
@@ -17,6 +21,9 @@ class ErrorHandler {
     }
   }
 
+  /// Processes an HTTP [response] and throws an Exception based on the status code.
+  ///
+  /// This method is used when the HTTP response is not 200 (OK).
   getHttpError(http.Response response) {
     String httpErrorMessage;
     switch (response.statusCode) {

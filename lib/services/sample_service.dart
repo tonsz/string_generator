@@ -5,6 +5,10 @@ import 'package:string_generator/models/sample_model.dart';
 
 final ErrorHandler _errorHandler = ErrorHandler();
 
+/// A service class for making API requests.
+///
+/// The class has methods for handling HTTP responses
+/// for fetching data and other CRUD operations.
 class SampleService {
   Future<Sample> getRandomString() async {
     try {

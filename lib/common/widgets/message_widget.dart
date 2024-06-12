@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// A widget that displays a message with a leading icon.
+///
+/// An [icon] and [message] must be provided.
 class MessageWidget extends StatelessWidget {
   final IconData icon;
   final String message;
