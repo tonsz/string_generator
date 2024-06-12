@@ -1,13 +1,13 @@
 class Sample {
-  String? randomString;
+  String randomString;
 
   Sample({
-    this.randomString,
+    required this.randomString,
   });
 
-  factory Sample.fromJson(json) {
+  factory Sample.fromJson(Map<String, dynamic> json) {
     return Sample(
-      randomString: json['randomString'],
+      randomString: json['randomString'] ?? '',
     );
   }
 }
