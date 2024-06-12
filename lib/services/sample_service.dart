@@ -10,10 +10,9 @@ final ErrorHandler _errorHandler = ErrorHandler();
 /// The class has methods for handling HTTP responses
 /// for fetching data and other CRUD operations.
 class SampleService {
-  Future<Sample> getRandomString() async {
+  Future<Sample> getRandomString(String url) async {
     try {
-      final response = await http.get(Uri.parse(
-          'https://o7q6ka26qs232rmbtpbrxghy6u0vyrup.lambda-url.ap-southeast-1.on.aws/'));
+      final response = await http.get(Uri.parse(url));
 
       if (response.statusCode == 200) {
         return Sample.fromJson(jsonDecode(response.body));

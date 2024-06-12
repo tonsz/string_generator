@@ -16,6 +16,8 @@ Create an application that will send a request to the given endpoint and display
 
 ### Screenshot
 
+![screenshot](screenshot.jpg)
+
 ### Getting Started
 
 Steps to running the app locally:
