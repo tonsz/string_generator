@@ -18,20 +18,39 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       appBar: AppBar(
         title: const Text('Random String Generator'),
       ),
-      body: Center(
-        child: sample.when(
-          data: (sampleData) {
-            return Text(sampleData.randomString ?? '');
-          },
-          error: (e, s) {
-            return Text(e.toString());
-          },
-          loading: () {
-            return CircularProgressIndicator();
-          },
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Container(
+              alignment: Alignment.center,
+              padding: const EdgeInsets.only(top: 100, bottom: 24),
+              child: sample.when(
+                data: (sampleData) {
+                  return Text(
+                    sampleData.randomString!,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 32,
+                    ),
+                  );
+                },
+                error: (e, s) {
+                  return Text(e.toString());
+                },
+                loading: () {
+                  return const CircularProgressIndicator();
+                },
+              ),
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  ref.invalidate(sampleProvider);
+                },
+                child: const Text('Generate a new string'))
+          ],
         ),
       ),
-      // floatingActionButton: FloatingActionButton(onPressed: () {}),
     );
   }
 }
